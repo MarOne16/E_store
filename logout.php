@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 session_destroy();
-header('location:connecAdmin.php')
+header('location:connect.php')
 ?>

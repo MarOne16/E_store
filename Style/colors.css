@@ -1,0 +1,26 @@
+:root{
+    --background : #efefef;
+    --background-transparent : #2B2D42;
+    --text-color : #EF233C;
+    --text-white : #EDF2F4;
+    --btn-background : #D90429;
+    --btn-background2 :#8d99ae;
+    --btn-radius : 50px;
+    --hover-color : #292929;
+    --card-shadow : #5656561f;
+    --second-background : #001427 ;
+    --navbar-color: #edf2f4;
+    --navbar-color-text : #ef233c;
+}
+/*:root{
+    --background : #efefef;
+    --background-transparent : #0000005b;
+    --text-color : #133337;
+    --text-white : #ffffff;
+    --btn-background : #990000;
+    --btn-radius : 50px;
+    --hover-color : #292929;
+    --card-shadow : #5656561f;
+    --second-background : rgb(76, 76, 76) ;
+    
+}*/

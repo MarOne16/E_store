@@ -37,7 +37,7 @@
     }
     ?>
     <?php
-    $req1 = $pdo->prepare('select count(id_seller) from sellers_acount;');
+    $req1 = $pdo->prepare('select count(id_seller) from sellers_acount where id_status = 2 ;');
     $req1->execute();
     $totalSelerse = $req1->fetch();
     $result1 = array_shift($totalSelerse);
@@ -58,7 +58,7 @@
 
     ?>
     <?php
-    $statment = $pdo->prepare('SELECT * FROM sellers_acount where id_status = 0 ORDER BY id_seller asc');
+    $statment = $pdo->prepare('SELECT * FROM sellers_acount where id_status = 1 ORDER BY id_seller asc');
     $statment->execute();
     $sellers = $statment->fetchAll(PDO::FETCH_ASSOC);
 
@@ -130,18 +130,16 @@
 
                 <div class="boxes">
                     <div class="box box1">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Total Likes</span>
+                    <i class="uil uil-users-alt"></i>
+                        <span class="text">Total sellers</span>
                         <span class="number"><?php print($result1); ?></span>
                     </div>
                     <div class="box box2">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Comments</span>
+                        <span class="text">total products</span>
                         <span class="number"><?php print($result2); ?></span>
                     </div>
                     <div class="box box3">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Total Share</span>
+                        <span class="text">Total selles</span>
                         <span class="number"><?php print($result3); ?></span>
                     </div>
                 </div>
@@ -157,13 +155,12 @@
                     <div class="card" style="width:80%;">
                         <div class="row no-gutters">
                             <div class="col-sm-5">
-                                <img class="card-img" src="<?php echo $seller['image'] ?>" alt="Suresh Dasari Card">
+                                <img class="card-img" src="<?php echo $seller['photo'] ?>" alt="Suresh Dasari Card">
                             </div>
                             <div class="col-sm-7">
                                 <div class="card-body">
                                     <div style="display: block;">
                                         <h5 class="card-title"><?php echo $seller['nom']  ?>&nbsp<?php echo $seller['prenom']  ?> </h5>
-                                        <h5 class="card-title"><?php echo $seller['prenom']  ?></h5>
                                     </div>
                                     <h5 class="card-title">cin :<?php echo $seller['cin']  ?></h5>
                                     <p class="card-text">address:<?php echo $seller['address']  ?>&nbsp&nbsp<?php echo $seller['city']  ?></p>

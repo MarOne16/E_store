@@ -14,6 +14,10 @@
         .bcontent {
             margin-top: 10px;
         }
+        img{
+            width:100px;
+            width:100px;
+        }
     </style>
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="style.css">
@@ -126,12 +130,18 @@
       <?php foreach ($products as  $product) : ?>
         <tr>
           <td>
-            <img src="<?php echo $product['image'] ?>" class="thumb-image" alt="">
+            <img  src="<?php echo $product['image'] ?>" class="thumb-image" alt="">
           </td>
-          <td><?php echo $product['title']  ?></td>
+          <td><?php echo $product['nom']  ?></td>
           <td><?php echo $product['price']  ?></td>
           <td><?php echo $product['create_date']  ?></td>
-
+        <td>
+            <a href="update.php?id=<?php echo $product['id_product'] ?>" class="btn  btn-outline-primary">Edit</a>
+            <form method="post" action="delete.php" style="display: inline-block">
+                <input  type="hidden" name="id" value="<?php echo $product['id_product'] ?>"/>
+                <button type="submit" class="btn btn-outline-danger">Delete</button>
+            </form>
+        </td>
         </tr>
       <?php endforeach; ?>
     </tbody>

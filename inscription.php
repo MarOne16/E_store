@@ -6,10 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-
+<?php
+    include('navbar.php');
+?>
 <div class="container mt-5">
-
-        <form action="actionInscription.php" class="form" method="GET" name="inscript"  >
+        <h1 class="CategoriesTitle">Inscription</h1>
+        <form action="actionInscription.php" class="form" method="post" enctype="multipart/form-data"  >
             <div class="form">
                 <input type="text" class="form-control" name="nom" value="<?php if (isset ($_GET['nom'])) echo $_GET['nom'];?>" placeholder="Your Name"required>
             </div>
@@ -25,9 +27,8 @@
             <div class="form">
                 <input  type="tel" class="form-control" name="phone" placeholder=" your phone" value="<?php if (isset ($_GET['phone']))echo $_GET['phone'];?>" required>  
             </div>
-            <div class="form1">
-                <label for="photo">Your photo  </label>
-                <input type="file" class="form-control1" name="photo" value="<?php if (isset ($_GET['photo'])) echo $_GET['photo'];?>"  >
+            <div class="form">
+                <input type="file" class="form-control" name="photo" value="<?php if (isset ($_GET['photo'])) echo $_GET['photo'];?>"  >
             </div>
             <div class="form">
                 <input type="text"  class="form-control" name="address" placeholder="Your address" value="<?php if (isset ($_GET['address']))echo $_GET['address'];?>"required >
@@ -35,9 +36,8 @@
             <div class="form">
                 <input type="text"  class="form-control" name="city" placeholder=" your city" value="<?php if (isset ($_GET['city']))echo $_GET['city'];?>" required>  
             </div>
-            <div class="form1">
-                <label for="photo">Your id photo </label>
-                <input type="file"  class="form-control1" name="cin_photo" value="<?php if (isset ($_GET['cin_photo']))echo $_GET['cin_photo'];?>" required >
+            <div class="form">
+                <input type="file"  class="form-control" name="cinphoto" value="<?php if (isset ($_GET['cinphoto']))echo $_GET['cinphoto'];?>" required >
             </div>
             <div class="form">
                 <input type="mail" class="form-control" name="email" value="<?php if (isset ($_GET['email']))echo $_GET['email'];?>" placeholder="Your email"required>
@@ -69,6 +69,7 @@
                         }
                     }
                     
+                    
                     ?>
                 </td>
             </tr>
@@ -78,5 +79,6 @@
             </div>
         </table>
         </form>
+</div>
 </body>
 </html>

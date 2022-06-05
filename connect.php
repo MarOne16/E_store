@@ -4,7 +4,7 @@
 <head>
     <?php include('Links.php'); ?>
 
-    <link rel="stylesheet" href="./Style/login.css">
+    <link rel="stylesheet" href="Style/login.css">
     <title>Document</title>
 </head>
 
@@ -13,36 +13,19 @@
     <?php
 
 
-    // include('navbar.php');
+    include('navbar.php');
     ?>
     <?php
 
 
-//    $_GET['result'];
-//
-//    switch ($_GET['result']) {
-//
-//        case 1:
-//            echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'>inprosses</h5>";
-//            break;
-//        case 3:
-//            echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'>suspend</h5>";
-//            break;
-//        case 4:
-//            echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'> reject</h5>";
-//            break;
-//        case 5:
-//            echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'> bannde</h5>";
-//            break;
-//    }
-//
+
 
 
 
     ?>
     <div class="container">
         <h1 class="CategoriesTitle">Se connecter</h1>
-        <form action="actionConnectS&U.php" method="GET">
+        <form action="actionConnectAdmin.php" method="GET">
             <div class="form">
                 <input type="mail" class="form-control" name="email" value="<?php if (isset($_GET['email'])) echo $_GET['email']; ?>" placeholder="Your email">
             </div>
@@ -64,10 +47,10 @@
                                 echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'>suspend</h5>";
                                 break;
                             case 4:
-                                echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'> reject</h5>";
+                                echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'> rejected</h5>";
                                 break;
                             case 5:
-                                echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'> bannde</h5>";
+                                echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'> banned</h5>";
                                 break;
                         }
                     }
@@ -79,18 +62,7 @@ else{
                             case 1:
                                 echo "<h5 class='bg-danger w-50 p-2  text-light mb-4 error'>login ou psw incorrect</h5>";
                                 break;
-                                // case 2 :
-                                //     echo"<h5 class='bg-danger w-50 p-2  text-light mb-4 error'>inProcess</h5>";
-                                //     break;
-                                // case 4 :
-                                //     echo"<h5 class='bg-danger w-50 p-2  text-light mb-4 error'>rejected</h5>";
-                                //     break;
-                                // case 5 :
-                                //     echo"<h5 class='bg-danger w-50 p-2  text-light mb-4 error'>suspend</h5>";
-                                //     break;
-                                // case 6 :
-                                //     echo"<h5 class='bg-danger w-50 p-2  text-light mb-4 error'>suspend</h5>";
-                                //     break;
+                
                         }
                     }
                 }

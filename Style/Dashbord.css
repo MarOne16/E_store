@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
+@import "colors.css";
+.containeroftable{
+    margin-left: 15%;
+}
+.headeroftable{
+    padding: 20px;
+    
+}
+.titleofproduct{
+    background-color: var(--hover-color);
+    color: var(--text-white);
+    padding: 10px 0 10px 0;
+    border-radius: 20px;
+}
+.pictureofproduct{
+    border-radius:20px;
+    height: 160px;
+    width: 240px;
+    object-fit: cover;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.detailofproduct{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    width: 17.5%;
+}
+
+.MyProductRow td form .btn a{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--text-white);
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--btn-background);
+}
+.createProduct , .dashbordHome{
+    padding-top: 0%;
+    margin-left: 15%;
+}
+
+

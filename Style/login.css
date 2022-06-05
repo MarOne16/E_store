@@ -1,18 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
-:root{
-    --background : #efefef;
-    --background-transparent : #00000050;
-    --text-color : #133337;
-    --text-white : #f3f6f4;
-    --btn-background : #990000;
-    --btn-radius : 50px;
-    --hover-color : #292929;
-    --box-shadow : rgba(68, 68, 68, 0.116);
-}
+@import'colors.css';
 form {
     display: flexbox;
     height: 75vh;
     text-align: center;
+}
+body{
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.log-container{
+    background-color: #f1f1f1;
+    padding-top: 0;
+    width: 50%;
+    min-width: 590px;
+    margin: auto;
+    height: 400px;
+    box-shadow: 0 10px 45px #9696968f;
+    padding: 40px;
+    border-radius: 20px;
+}
+.ins-container{
+    background-color: #f1f1f1;
+    padding-top: 0;
+    width: 50%;
+    min-width: 590px;
+    margin: auto;
+    height: 600px;
+    box-shadow: 0 10px 45px #9696968f;
+    padding: 40px;
+    border-radius: 20px;
 }
 .form{
     margin-top: 20px; 
@@ -27,6 +45,42 @@ form {
     border-radius: 50px;
     border: none;
     box-shadow: 0 0 15px var(--box-shadow);
+    outline: none;
+}
+.form textarea{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding: 15px;
+    min-width: 500px;
+    width: 30%;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 15px var(--box-shadow);
+    outline: none;
+}
+.form select{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding: 15px;
+    min-width: 500px;
+    width: 30%;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 0 15px var(--box-shadow);
+    outline: none;
+}
+.form input[type="file"]{
+    background-color: var(--card-shadow);
+    padding: 0;
+}
+::-webkit-file-upload-button{
+    padding: 15px;
+    background-color: var(--btn-background);
+    color: var(--text-white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border-radius: 50px;
+    border: none;
 }
 .btn_col{
     padding-top: 20px;
@@ -50,6 +104,6 @@ form {
     font-size: 20px;
 }
 .BtnInscription , .reset{
-    background-color: var(--text-color);
+    background-color: var(--btn-background2);
 }
 

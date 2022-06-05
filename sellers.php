@@ -14,6 +14,11 @@
         .bcontent {
             margin-top: 10px;
         }
+        #status-display{
+            display: inline;
+            margin-right:1px;
+            margin-left:2px;
+        }
     </style>
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="style.css">
@@ -36,7 +41,7 @@
     }
     ?>
     <?php
-    $statment = $pdo->prepare('SELECT * FROM sellers_acount where id_status = 1 or id_status =3 or id_status =4 ORDER BY id_seller asc');
+    $statment = $pdo->prepare('SELECT * FROM sellers_acount where id_status = 2 or id_status =4 or id_status =5 ORDER BY id_seller asc');
     $statment->execute();
     $sellers = $statment->fetchAll(PDO::FETCH_ASSOC);
 
@@ -113,26 +118,40 @@
                         <div class="card" style="width:80%;">
                             <div class="row no-gutters">
                                 <div class="col-sm-5">
-                                    <img class="card-img" src="<?php echo $seller['image'] ?>" alt="Suresh Dasari Card">
+                                    <img class="card-img" src="<?php echo $seller['photo'] ?>" alt="Suresh Dasari Card">
                                 </div>
                                 <div class="col-sm-7">
                                     <div class="card-body">
                                         <div style="display: block;">
-                                            <h5 class="card-title"><?php echo $seller['nom']  ?>&nbsp<?php echo $seller['prenom']  ?> </h5>
-                                            <h5 class="card-title"><?php echo $seller['prenom']  ?></h5>
-                                        </div>
-                                        <h5 class="card-title">cin :<?php echo $seller['cin']  ?></h5>
+                                            <h5 class="card-title"><?php echo $seller['nom']  ?>&nbsp&nbsp<?php echo $seller['prenom']  ?> </h5>
+                                        </div>  
+                                        <h5 class="card-title">CIN:<?php echo $seller['cin']  ?></h5>
                                         <p class="card-text">address:<?php echo $seller['address']  ?>&nbsp&nbsp<?php echo $seller['city']  ?></p>
                                         <p class="card-text">email: <?php echo $seller['email']  ?></p>
                                         <p class="card-text">phone: <?php echo $seller['phone']  ?></p>
                                         <?php 
-                                        if($seller['id_status']=1){
-                                        ?>
-                                        <h4 class="card-text" style="color: blue;" >acount Status:&nbsp <?php echo "accepte";  ?></h4>
-                                        <?php } ?>
-                                        <div style="display: block;">
+                                            switch ($seller['id_status']){
+                                                case 2:
+                                                    echo ' <h6 class="card-text" id="status-display" style="color: blue;" >acount Status:</h6> <h6 id="status-display" style="color: green;" >active</h6> ';
+
+                                                    break;
+                                                case 4: 
+                                                    echo ' <h6 class="card-text" id="status-display" style="color: blue;" >acount Status: </h6><h6 id="status-display" style="color: #FFA500;">suspended</h6>';
+
+                                                    break;
+                                                case 5:
+                                                    echo  ' <h6 class="card-text" id="status-display" style="color: blue;" >acount Status:</h6> <h6 id="status-display" style="color: red;" >banned</h6>';
+
+                                                    break;
+                                                    }
+                                       ?>
+                               
+                                    
+                                   
+                                       
+                                        <div style="display: block ; margin-top:15px; ">
                                             <div style="display: inline-block;">
-                                                <a name="accepte" href="accept.php ?id_seller=<?php echo $seller['id_seller']  ?>" class="btn btn-primary">accepte</a>
+                                                <a name="accepte" href="accept2.php ?id_seller=<?php echo $seller['id_seller']  ?>" class="btn btn-primary">accepte</a>
                                                 <a name="reject" href="banned.php ?id_seller=<?php echo $seller['id_seller']  ?>" class="btn btn-primary">banned</a>
                                                 <a name="reject" href="suspend.php ?id_seller=<?php echo $seller['id_seller']  ?>" class="btn btn-primary">suspend</a>
                                                 
